@@ -1,0 +1,13 @@
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.csproj.AssemblyReference.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.Form1.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.Properties.Resources.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.csproj.GenerateResource.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.csproj.CoreCompileInputs.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\bin\Debug\MiniCalculator.exe.config
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\bin\Debug\MiniCalculator.exe
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\bin\Debug\MiniCalculator.pdb
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\bin\Debug\Calculation.dll
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\bin\Debug\Calculation.pdb
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalc.0E9287D7.Up2Date
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.exe
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\MiniCalculator\obj\Debug\MiniCalculator.pdb

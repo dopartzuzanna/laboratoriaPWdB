@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab1\\Calculation\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{486CE4E6-C698-4C81-A004-269F910FA274}|Calculation\\Calculation.csproj|c:\\users\\fruzi\\onedrive\\dokumenty\\studia\\semestr 4\\pwdb\\laby\\laboratoriapwdb\\lab1\\calculation\\calculation\\calculate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{486CE4E6-C698-4C81-A004-269F910FA274}|Calculation\\Calculation.csproj|solutionrelative:calculation\\calculate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "calculate.cs",
+              "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab1\\Calculation\\Calculation\\calculate.cs",
+              "RelativeDocumentMoniker": "Calculation\\calculate.cs",
+              "ToolTip": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab1\\Calculation\\Calculation\\calculate.cs",
+              "RelativeToolTip": "Calculation\\calculate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-06T13:50:45.206Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
