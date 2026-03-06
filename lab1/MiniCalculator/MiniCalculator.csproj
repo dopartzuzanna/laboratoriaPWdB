@@ -34,7 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Calculation">
-      <HintPath>..\Calculation\Calculation\bin\Debug\net8.0\Calculation.dll</HintPath>
+      <HintPath>..\Calculation\Calculation\bin\Debug\net472\Calculation.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

@@ -1,0 +1,10 @@
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\bin\Debug\net472\Calculation.dll
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\bin\Debug\net472\Calculation.pdb
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.csproj.AssemblyReference.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.AssemblyInfoInputs.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.AssemblyInfo.cs
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.csproj.CoreCompileInputs.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.sourcelink.json
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.dll
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab1\Calculation\Calculation\obj\Debug\net472\Calculation.pdb

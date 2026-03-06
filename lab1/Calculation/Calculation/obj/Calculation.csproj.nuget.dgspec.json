@@ -13,6 +13,7 @@
         "packagesPath": "C:\\Users\\fruzi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab1\\Calculation\\Calculation\\obj\\",
         "projectStyle": "PackageReference",
+        "crossTargeting": true,
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
@@ -22,6 +23,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
+          "net472",
           "net8.0"
         ],
         "sources": {
@@ -31,6 +33,10 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
+            "projectReferences": {}
+          },
+          "net472": {
+            "targetAlias": "net472",
             "projectReferences": {}
           }
         },
@@ -348,6 +354,10 @@
             "System.Xml.XPath": "(, 4.3.32767]",
             "System.Xml.XPath.XDocument": "(, 4.3.32767]"
           }
+        },
+        "net472": {
+          "targetAlias": "net472",
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.103\\RuntimeIdentifierGraph.json"
         }
       }
     }
