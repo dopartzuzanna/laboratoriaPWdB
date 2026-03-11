@@ -1,0 +1,13 @@
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\bin\Debug\lab2.exe.config
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\bin\Debug\lab2.exe
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\bin\Debug\lab2.pdb
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.csproj.AssemblyReference.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.Lista.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.Strona_glowna.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.Properties.Resources.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.Form1.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.Form2.resources
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.csproj.GenerateResource.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.csproj.CoreCompileInputs.cache
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.exe
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.pdb
