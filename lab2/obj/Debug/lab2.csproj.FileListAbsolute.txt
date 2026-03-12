@@ -11,3 +11,4 @@ C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab
 C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.csproj.CoreCompileInputs.cache
 C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.exe
 C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.pdb
+C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab2\obj\Debug\lab2.exe.config
