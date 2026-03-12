@@ -17,7 +17,6 @@ namespace lab2
             InitializeComponent();
         }
 
-        // Nowa właściwość udostępniająca wybraną formę płatności
         public string SelectedPayment
         {
             get
