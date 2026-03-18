@@ -48,14 +48,8 @@ namespace lab2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form2 oknoWyboru = new Form2();
-            oknoWyboru.ShowDialog();
-
-            string wybor = oknoWyboru.SelectedPayment;
-            if (!string.IsNullOrEmpty(wybor))
-            {
-                UstawFormeZaplaty(wybor);
-            }
+            Form2 oknoZaplaty = new Form2(this);
+            oknoZaplaty.Show();
         }
 
         public void UstawFormeZaplaty(string tekst)

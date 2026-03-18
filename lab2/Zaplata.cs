@@ -29,9 +29,21 @@ namespace lab2
             }
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
+        private Strona_glowna _rodzic;
 
+        public Form2(Strona_glowna rodzic)
+        {
+            InitializeComponent();
+            _rodzic = rodzic;
+        }
+
+        private void radioButton_CheckedChanged(object sender, EventArgs e)
+        {
+            RadioButton rb = sender as RadioButton;
+            if (rb != null && rb.Checked)
+            {
+                _rodzic.UstawFormeZaplaty(rb.Text);
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)

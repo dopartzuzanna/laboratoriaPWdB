@@ -3,36 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\strona_glowna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:strona_glowna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|c:\\users\\fruzi\\onedrive\\dokumenty\\studia\\semestr 4\\pwdb\\laby\\laboratoriapwdb\\lab2\\strona_glowna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:strona_glowna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:zaplata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|c:\\users\\fruzi\\onedrive\\dokumenty\\studia\\semestr 4\\pwdb\\laby\\laboratoriapwdb\\lab2\\strona_glowna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:strona_glowna.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|c:\\users\\fruzi\\onedrive\\dokumenty\\studia\\semestr 4\\pwdb\\laby\\laboratoriapwdb\\lab2\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:trans.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D5A1103B-FF82-4961-9933-60384EE3393D}|lab2.csproj|solutionrelative:lista.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,11 +42,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Strona_glowna.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Strona_glowna.cs",
               "RelativeDocumentMoniker": "Strona_glowna.cs",
@@ -58,7 +58,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "Lista.cs",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Lista.cs",
               "RelativeDocumentMoniker": "Lista.cs",
@@ -66,38 +66,36 @@
               "RelativeToolTip": "Lista.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwCIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-12T09:03:18.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-12T09:03:18.929Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 5,
               "Title": "Trans.cs",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Trans.cs",
               "RelativeDocumentMoniker": "Trans.cs",
               "ToolTip": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Trans.cs",
               "RelativeToolTip": "Trans.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAArwBoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T18:51:58.126Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-11T18:51:58.126Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Zaplata.cs",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Zaplata.cs",
               "RelativeDocumentMoniker": "Zaplata.cs",
               "ToolTip": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Zaplata.cs",
               "RelativeToolTip": "Zaplata.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBcAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwC0AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T18:41:44.365Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Zaplata.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Zaplata.cs",
               "RelativeDocumentMoniker": "Zaplata.cs",
@@ -116,30 +114,28 @@
               "ToolTip": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Trans.cs [Projekt]",
               "RelativeToolTip": "Trans.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T18:38:41.247Z",
-              "EditorCaption": " [Projekt]"
+              "WhenOpened": "2026-03-11T18:38:41.247Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Lista.cs [Projekt]",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Lista.cs",
               "RelativeDocumentMoniker": "Lista.cs",
               "ToolTip": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Lista.cs [Projekt]",
               "RelativeToolTip": "Lista.cs [Projekt]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-11T18:37:22.075Z",
-              "EditorCaption": " [Projekt]"
+              "WhenOpened": "2026-03-11T18:37:22.075Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Strona_glowna.cs",
               "DocumentMoniker": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Strona_glowna.cs",
               "RelativeDocumentMoniker": "Strona_glowna.cs",
               "ToolTip": "C:\\Users\\fruzi\\OneDrive\\Dokumenty\\STUDIA\\semestr 4\\PWdB\\laby\\laboratoriaPWdB\\lab2\\Strona_glowna.cs",
               "RelativeToolTip": "Strona_glowna.cs",
-              "ViewState": "AgIAAC4AAAAAAAAAAAAmwDMAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADAAAAAAAAAAAAA0wEkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-11T18:30:17.69Z",
               "EditorCaption": ""

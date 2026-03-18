@@ -25,6 +25,7 @@
             this.radioButton1.TabStop = true;
             this.radioButton1.Text = "Gotówka";
             this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton2
             // 
@@ -36,6 +37,7 @@
             this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Karta";
             this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton3
             // 
@@ -47,6 +49,7 @@
             this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Blik";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // radioButton4
             // 
@@ -58,6 +61,7 @@
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Kredyt";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton_CheckedChanged);
             // 
             // label1
             // 
