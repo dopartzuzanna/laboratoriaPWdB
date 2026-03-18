@@ -42,8 +42,21 @@ namespace lab2
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Otwieramy okno transportu modalnie
             Form1 oknoWyboru = new Form1();
             oknoWyboru.ShowDialog();
+
+            // Po zamknięciu okna odczytujemy zaznaczone opcje i pokazujemy je w listView2
+            var wybrane = oknoWyboru.SelectedTransports;
+            if (wybrane != null && wybrane.Count > 0)
+            {
+                // czyścimy poprzednie wpisy (opcjonalne)
+                listView2.Items.Clear();
+                foreach (string transport in wybrane)
+                {
+                    listView2.Items.Add(transport);
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -66,6 +79,11 @@ namespace lab2
         }
 
         private void listView3_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listView2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
