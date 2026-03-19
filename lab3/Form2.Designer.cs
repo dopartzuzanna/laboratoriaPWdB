@@ -101,18 +101,18 @@
             // 
             // zatwierdz
             // 
-            this.zatwierdz.Location = new System.Drawing.Point(114, 315);
+            this.zatwierdz.Location = new System.Drawing.Point(81, 315);
             this.zatwierdz.Name = "zatwierdz";
-            this.zatwierdz.Size = new System.Drawing.Size(75, 23);
+            this.zatwierdz.Size = new System.Drawing.Size(106, 23);
             this.zatwierdz.TabIndex = 8;
             this.zatwierdz.Text = "zatwierdź";
             this.zatwierdz.UseVisualStyleBackColor = true;
             // 
             // anuluj
             // 
-            this.anuluj.Location = new System.Drawing.Point(308, 315);
+            this.anuluj.Location = new System.Drawing.Point(277, 315);
             this.anuluj.Name = "anuluj";
-            this.anuluj.Size = new System.Drawing.Size(75, 23);
+            this.anuluj.Size = new System.Drawing.Size(106, 23);
             this.anuluj.TabIndex = 9;
             this.anuluj.Text = "anuluj";
             this.anuluj.UseVisualStyleBackColor = true;

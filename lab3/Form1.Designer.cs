@@ -50,19 +50,19 @@
             this.nazwisko,
             this.wiek,
             this.stanowisko});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 28);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 30);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(756, 313);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(650, 313);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.MultiSelect = false;
             // 
             // dodaj
             // 
-            this.dodaj.Location = new System.Drawing.Point(792, 129);
+            this.dodaj.Location = new System.Drawing.Point(682, 134);
             this.dodaj.Name = "dodaj";
             this.dodaj.Size = new System.Drawing.Size(90, 55);
             this.dodaj.TabIndex = 1;
@@ -72,7 +72,7 @@
             // 
             // usun
             // 
-            this.usun.Location = new System.Drawing.Point(792, 207);
+            this.usun.Location = new System.Drawing.Point(682, 212);
             this.usun.Name = "usun";
             this.usun.Size = new System.Drawing.Size(90, 55);
             this.usun.TabIndex = 2;
@@ -82,35 +82,37 @@
             // 
             // zapis
             // 
-            this.zapis.Location = new System.Drawing.Point(101, 365);
+            this.zapis.Location = new System.Drawing.Point(69, 368);
             this.zapis.Name = "zapis";
             this.zapis.Size = new System.Drawing.Size(265, 55);
             this.zapis.TabIndex = 3;
             this.zapis.Text = "zapis do .csv";
             this.zapis.UseVisualStyleBackColor = true;
+            this.zapis.Click += new System.EventHandler(this.zapisz_Click);
             // 
             // odczyt
             // 
-            this.odczyt.Location = new System.Drawing.Point(491, 365);
+            this.odczyt.Location = new System.Drawing.Point(354, 368);
             this.odczyt.Name = "odczyt";
             this.odczyt.Size = new System.Drawing.Size(265, 55);
             this.odczyt.TabIndex = 4;
             this.odczyt.Text = "odczyt z .csv";
             this.odczyt.UseVisualStyleBackColor = true;
+            this.odczyt.Click += new System.EventHandler(this.odczyt_Click);
             // 
             // Id
             // 
             this.Id.HeaderText = "Id";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
-            this.Id.Width = 125;
+            this.Id.Width = 50;
             // 
             // Imie
             // 
             this.Imie.HeaderText = "Imię";
             this.Imie.MinimumWidth = 6;
             this.Imie.Name = "Imie";
-            this.Imie.Width = 125;
+            this.Imie.Width = 75;
             // 
             // nazwisko
             // 
@@ -124,7 +126,7 @@
             this.wiek.HeaderText = "Wiek";
             this.wiek.MinimumWidth = 6;
             this.wiek.Name = "wiek";
-            this.wiek.Width = 125;
+            this.wiek.Width = 75;
             // 
             // stanowisko
             // 
@@ -137,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(903, 450);
+            this.ClientSize = new System.Drawing.Size(794, 450);
             this.Controls.Add(this.odczyt);
             this.Controls.Add(this.zapis);
             this.Controls.Add(this.usun);
