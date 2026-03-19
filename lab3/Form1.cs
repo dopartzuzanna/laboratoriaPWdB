@@ -30,7 +30,7 @@ namespace lab3
 
         private void dodaj_Click(object sender, EventArgs e)
         {
-            int nextId = 1;
+            int nextId = 1; 
             try
             {
                 int idColIndex = 0;
@@ -81,7 +81,6 @@ namespace lab3
 
         private void usun_Click(object sender, EventArgs e)
         {
-            // Jeśli DataSource != null — próbujemy usuwać z powiązanego źródła
             if (dataGridView1.DataSource != null)
             {
                 var selected = dataGridView1.SelectedRows.Cast<DataGridViewRow>().ToList();
@@ -117,7 +116,6 @@ namespace lab3
                 return;
             }
 
-            // Brak DataSource — usuń bezpośrednio z Rows
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 var rowsToRemove = dataGridView1.SelectedRows
