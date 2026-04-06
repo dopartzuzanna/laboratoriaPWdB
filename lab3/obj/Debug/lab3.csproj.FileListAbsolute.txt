@@ -10,3 +10,14 @@ C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab
 C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.exe
 C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.pdb
 C:\Users\fruzi\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.exe.config
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\bin\Debug\lab3.exe.config
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\bin\Debug\lab3.exe
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\bin\Debug\lab3.pdb
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.csproj.AssemblyReference.cache
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.Form1.resources
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.Form2.resources
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.Properties.Resources.resources
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.csproj.GenerateResource.cache
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.csproj.CoreCompileInputs.cache
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.exe
+C:\Users\zuzanna\OneDrive\Dokumenty\STUDIA\semestr 4\PWdB\laby\laboratoriaPWdB\lab3\obj\Debug\lab3.pdb
