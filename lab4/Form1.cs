@@ -46,5 +46,31 @@ namespace lab4
 
             pictureBox1.Image = bmp;
         }
+
+        private void btnUpsideDown_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null) return;
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+            bmp.RotateFlip(RotateFlipType.RotateNoneFlipY);
+            pictureBox1.Image = bmp;
+        }
+
+        private void btnInvert_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null) return;
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+
+            // Przechodzimy przez każdy piksel obrazka
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    Color oldColor = bmp.GetPixel(x, y);
+                    Color newColor = Color.FromArgb(255 - oldColor.R, 255 - oldColor.G, 255 - oldColor.B);
+                    bmp.SetPixel(x, y, newColor);
+                }
+            }
+            pictureBox1.Image = bmp;
+        }
     }
 }

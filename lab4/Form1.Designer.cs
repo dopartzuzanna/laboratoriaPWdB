@@ -35,6 +35,8 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.btnRotate = new System.Windows.Forms.Button();
+            this.btnInvert = new System.Windows.Forms.Button();
+            this.btnUpsideDown = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -108,11 +110,37 @@
             this.btnRotate.UseVisualStyleBackColor = false;
             this.btnRotate.Click += new System.EventHandler(this.btnRotate_Click);
             // 
+            // btnInvert
+            // 
+            this.btnInvert.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnInvert.ForeColor = System.Drawing.Color.Black;
+            this.btnInvert.Location = new System.Drawing.Point(57, 182);
+            this.btnInvert.Name = "btnInvert";
+            this.btnInvert.Size = new System.Drawing.Size(144, 45);
+            this.btnInvert.TabIndex = 6;
+            this.btnInvert.Text = "Invert Colors";
+            this.btnInvert.UseVisualStyleBackColor = false;
+            this.btnInvert.Click += new System.EventHandler(this.btnInvert_Click);
+            // 
+            // btnUpsideDown
+            // 
+            this.btnUpsideDown.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnUpsideDown.ForeColor = System.Drawing.Color.Black;
+            this.btnUpsideDown.Location = new System.Drawing.Point(57, 233);
+            this.btnUpsideDown.Name = "btnUpsideDown";
+            this.btnUpsideDown.Size = new System.Drawing.Size(144, 45);
+            this.btnUpsideDown.TabIndex = 7;
+            this.btnUpsideDown.Text = "Upside Down";
+            this.btnUpsideDown.UseVisualStyleBackColor = false;
+            this.btnUpsideDown.Click += new System.EventHandler(this.btnUpsideDown_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 444);
+            this.Controls.Add(this.btnUpsideDown);
+            this.Controls.Add(this.btnInvert);
             this.Controls.Add(this.btnRotate);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
@@ -136,6 +164,8 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button btnRotate;
+        private System.Windows.Forms.Button btnInvert;
+        private System.Windows.Forms.Button btnUpsideDown;
     }
 }
 
