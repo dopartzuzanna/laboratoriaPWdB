@@ -31,6 +31,28 @@ namespace lab4
             }
         }
 
+        private void btnOnlyGreen_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null) return;
+
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+
+            for (int y = 0; y < bmp.Height; y++)
+            {
+                for (int x = 0; x < bmp.Width; x++)
+                {
+                    Color c = bmp.GetPixel(x, y);
+
+                    if (!(c.G > c.R && c.G > c.B))
+                    {
+                        bmp.SetPixel(x, y, Color.Black);
+                    }
+                }
+            }
+
+            pictureBox1.Image = bmp;
+        }
+
         private void btnRotate_Click(object sender, EventArgs e)
         {
             if (pictureBox1.Image == null) return; 
