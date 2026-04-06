@@ -31,7 +31,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnLoad = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btnOnlyGreen = new System.Windows.Forms.Button();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -64,18 +63,6 @@
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
-            // 
-            // btnOnlyGreen
-            // 
-            this.btnOnlyGreen.BackColor = System.Drawing.Color.Lime;
-            this.btnOnlyGreen.Cursor = System.Windows.Forms.Cursors.Default;
-            this.btnOnlyGreen.Location = new System.Drawing.Point(57, 291);
-            this.btnOnlyGreen.Name = "btnOnlyGreen";
-            this.btnOnlyGreen.Size = new System.Drawing.Size(144, 36);
-            this.btnOnlyGreen.TabIndex = 2;
-            this.btnOnlyGreen.Text = "Only Green";
-            this.btnOnlyGreen.UseVisualStyleBackColor = false;
-            this.btnOnlyGreen.Click += new System.EventHandler(this.btnOnlyGreen_Click);
             // 
             // radioButton1
             // 
@@ -152,7 +139,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(622, 444);
-            this.Controls.Add(this.btnOnlyGreen);
             this.Controls.Add(this.btnUpsideDown);
             this.Controls.Add(this.btnInvert);
             this.Controls.Add(this.btnRotate);
@@ -174,13 +160,16 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private System.Windows.Forms.Button btnOnlyGreen;
+<<<<<<< HEAD
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.Button btnRotate;
         private System.Windows.Forms.Button btnInvert;
         private System.Windows.Forms.Button btnUpsideDown;
+=======
+        private System.Windows.Forms.Button btnOnlyGreen;
+>>>>>>> BranchB
     }
 }
 
