@@ -30,5 +30,21 @@ namespace lab4
                 pictureBox1.Image = new Bitmap(openFileDialog1.FileName);
             }
         }
+
+        private void btnRotate_Click(object sender, EventArgs e)
+        {
+            if (pictureBox1.Image == null) return; 
+
+            Bitmap bmp = new Bitmap(pictureBox1.Image);
+
+            if (radioButton1.Checked)
+                bmp.RotateFlip(RotateFlipType.Rotate90FlipNone);
+            else if (radioButton2.Checked)
+                bmp.RotateFlip(RotateFlipType.Rotate180FlipNone);
+            else if (radioButton3.Checked)
+                bmp.RotateFlip(RotateFlipType.Rotate270FlipNone);
+
+            pictureBox1.Image = bmp;
+        }
     }
 }
