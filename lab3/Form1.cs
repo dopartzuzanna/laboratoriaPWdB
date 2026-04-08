@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
+using System.IO;
 
 namespace lab3
 {
@@ -293,7 +295,6 @@ namespace lab3
                 }
 
                 int startIndex = 0;
-                // rozpoznajemy, czy pierwsza linia to nagłówek:
                 var firstFields = ParseCsvLine(nonEmpty[0]);
                 bool looksLikeHeader = firstFields.Count > 0 &&
                     firstFields.Any(f => dataGridView1.Columns
@@ -304,7 +305,6 @@ namespace lab3
                 if (looksLikeHeader)
                     startIndex = 1;
 
-                // Wyczyść istniejące wiersze i wczytaj nowe
                 dataGridView1.Rows.Clear();
 
                 for (int idx = startIndex; idx < nonEmpty.Count; idx++)
@@ -324,6 +324,35 @@ namespace lab3
 
                 MessageBox.Show($"Wczytano {Math.Max(0, nonEmpty.Count - startIndex)} rekordów z pliku:\n{ofd.FileName}", "Odczyt zakończony", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnZapiszJSON_Click(object sender, EventArgs e)
+        {
+            List<Osoba> lista = PobierzDaneZGrid();
+
+            var opcje = new JsonSerializerOptions { WriteIndented = true };
+            string jsonString = JsonSerializer.Serialize(lista, opcje);
+
+            File.WriteAllText("osoby.json", jsonString);
+            MessageBox.Show("Dane zapisane do osoby.json", "Sukces");
+        }
+
+        private List<Osoba> PobierzDaneZGrid()
+        {
+            List<Osoba> lista = new List<Osoba>();
+            foreach (DataGridViewRow wiersz in dataGridView1.Rows)
+            {
+                if (wiersz.IsNewRow) continue;
+                lista.Add(new Osoba
+                {
+                    Id = Convert.ToInt32(wiersz.Cells["Id"].Value),
+                    Imie = wiersz.Cells["Imie"].Value?.ToString(),
+                    Nazwisko = wiersz.Cells["nazwisko"].Value?.ToString(),
+                    Wiek = Convert.ToInt32(wiersz.Cells["wiek"].Value),
+                    Stanowisko = wiersz.Cells["stanowisko"].Value?.ToString()
+                });
+            }
+            return lista;
         }
     }
 }
