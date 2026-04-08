@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dodaj = new System.Windows.Forms.Button();
-            this.usun = new System.Windows.Forms.Button();
-            this.zapis = new System.Windows.Forms.Button();
-            this.odczyt = new System.Windows.Forms.Button();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Imie = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nazwisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wiek = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stanowisko = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dodaj = new System.Windows.Forms.Button();
+            this.usun = new System.Windows.Forms.Button();
+            this.zapis = new System.Windows.Forms.Button();
+            this.odczyt = new System.Windows.Forms.Button();
+            this.btnZapiszXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,46 +60,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(650, 313);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // dodaj
-            // 
-            this.dodaj.Location = new System.Drawing.Point(682, 134);
-            this.dodaj.Name = "dodaj";
-            this.dodaj.Size = new System.Drawing.Size(90, 55);
-            this.dodaj.TabIndex = 1;
-            this.dodaj.Text = "dodaj";
-            this.dodaj.UseVisualStyleBackColor = true;
-            this.dodaj.Click += new System.EventHandler(this.dodaj_Click);
-            // 
-            // usun
-            // 
-            this.usun.Location = new System.Drawing.Point(682, 212);
-            this.usun.Name = "usun";
-            this.usun.Size = new System.Drawing.Size(90, 55);
-            this.usun.TabIndex = 2;
-            this.usun.Text = "usun";
-            this.usun.UseVisualStyleBackColor = true;
-            this.usun.Click += new System.EventHandler(this.usun_Click);
-            // 
-            // zapis
-            // 
-            this.zapis.Location = new System.Drawing.Point(69, 368);
-            this.zapis.Name = "zapis";
-            this.zapis.Size = new System.Drawing.Size(265, 55);
-            this.zapis.TabIndex = 3;
-            this.zapis.Text = "zapis do .csv";
-            this.zapis.UseVisualStyleBackColor = true;
-            this.zapis.Click += new System.EventHandler(this.zapisz_Click);
-            // 
-            // odczyt
-            // 
-            this.odczyt.Location = new System.Drawing.Point(354, 368);
-            this.odczyt.Name = "odczyt";
-            this.odczyt.Size = new System.Drawing.Size(265, 55);
-            this.odczyt.TabIndex = 4;
-            this.odczyt.Text = "odczyt z .csv";
-            this.odczyt.UseVisualStyleBackColor = true;
-            this.odczyt.Click += new System.EventHandler(this.odczyt_Click);
             // 
             // Id
             // 
@@ -135,11 +96,62 @@
             this.stanowisko.Name = "stanowisko";
             this.stanowisko.Width = 125;
             // 
+            // dodaj
+            // 
+            this.dodaj.Location = new System.Drawing.Point(682, 134);
+            this.dodaj.Name = "dodaj";
+            this.dodaj.Size = new System.Drawing.Size(90, 55);
+            this.dodaj.TabIndex = 1;
+            this.dodaj.Text = "dodaj";
+            this.dodaj.UseVisualStyleBackColor = true;
+            this.dodaj.Click += new System.EventHandler(this.dodaj_Click);
+            // 
+            // usun
+            // 
+            this.usun.Location = new System.Drawing.Point(682, 212);
+            this.usun.Name = "usun";
+            this.usun.Size = new System.Drawing.Size(90, 55);
+            this.usun.TabIndex = 2;
+            this.usun.Text = "usun";
+            this.usun.UseVisualStyleBackColor = true;
+            this.usun.Click += new System.EventHandler(this.usun_Click);
+            // 
+            // zapis
+            // 
+            this.zapis.Location = new System.Drawing.Point(47, 366);
+            this.zapis.Name = "zapis";
+            this.zapis.Size = new System.Drawing.Size(140, 55);
+            this.zapis.TabIndex = 3;
+            this.zapis.Text = "zapis do .csv";
+            this.zapis.UseVisualStyleBackColor = true;
+            this.zapis.Click += new System.EventHandler(this.zapisz_Click);
+            // 
+            // odczyt
+            // 
+            this.odczyt.Location = new System.Drawing.Point(234, 366);
+            this.odczyt.Name = "odczyt";
+            this.odczyt.Size = new System.Drawing.Size(140, 55);
+            this.odczyt.TabIndex = 4;
+            this.odczyt.Text = "odczyt z .csv";
+            this.odczyt.UseVisualStyleBackColor = true;
+            this.odczyt.Click += new System.EventHandler(this.odczyt_Click);
+            // 
+            // btnZapiszXML
+            // 
+            this.btnZapiszXML.Location = new System.Drawing.Point(431, 366);
+            this.btnZapiszXML.Name = "btnZapiszXML";
+            this.btnZapiszXML.Size = new System.Drawing.Size(140, 55);
+            this.btnZapiszXML.TabIndex = 5;
+            this.btnZapiszXML.Text = "zapis do .xml";
+            this.btnZapiszXML.UseVisualStyleBackColor = true;
+            this.btnZapiszXML.Click += new System.EventHandler(this.btnZapiszXML_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(794, 450);
+            this.Controls.Add(this.btnZapiszXML);
             this.Controls.Add(this.odczyt);
             this.Controls.Add(this.zapis);
             this.Controls.Add(this.usun);
@@ -165,6 +177,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nazwisko;
         private System.Windows.Forms.DataGridViewTextBoxColumn wiek;
         private System.Windows.Forms.DataGridViewTextBoxColumn stanowisko;
+        private System.Windows.Forms.Button btnZapiszXML;
     }
 }
 

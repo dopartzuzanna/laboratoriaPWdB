@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace lab3
 {
@@ -30,7 +32,7 @@ namespace lab3
 
         private void dodaj_Click(object sender, EventArgs e)
         {
-            int nextId = 1; 
+            int nextId = 1;
             try
             {
                 int idColIndex = 0;
@@ -324,6 +326,31 @@ namespace lab3
 
                 MessageBox.Show($"Wczytano {Math.Max(0, nonEmpty.Count - startIndex)} rekordów z pliku:\n{ofd.FileName}", "Odczyt zakończony", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void btnZapiszXML_Click(object sender, EventArgs e)
+        {
+            List<Osoba> lista = new List<Osoba>();
+            foreach (DataGridViewRow wiersz in dataGridView1.Rows)
+            {
+                if (wiersz.IsNewRow) continue;
+
+                lista.Add(new Osoba
+                {
+                    Id = Convert.ToInt32(wiersz.Cells["Id"].Value),
+                    Imie = wiersz.Cells["Imie"].Value?.ToString(),
+                    Nazwisko = wiersz.Cells["nazwisko"].Value?.ToString(),
+                    Wiek = Convert.ToInt32(wiersz.Cells["wiek"].Value),
+                    Stanowisko = wiersz.Cells["stanowisko"].Value?.ToString()
+                });
+            }
+            XmlSerializer serializer = new XmlSerializer(typeof(List<Osoba>));
+            using (StreamWriter sw = new StreamWriter("dane.xml"))
+            {
+                serializer.Serialize(sw, lista);
+            }
+
+            MessageBox.Show("Dane zostały zapisane do pliku dane.xml", "Sukces");
         }
     }
 }
