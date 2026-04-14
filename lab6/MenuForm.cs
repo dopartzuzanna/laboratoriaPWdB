@@ -21,5 +21,17 @@ namespace lab6
         {
 
         }
+
+        private void btnUstawienia_Click(object sender, EventArgs e)
+        {
+            FormSettings settings = new FormSettings();
+            settings.ShowDialog();
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            FormGame game = new FormGame();
+            game.Show();
+        }
     }
 }
