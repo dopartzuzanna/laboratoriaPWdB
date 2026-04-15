@@ -28,19 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblCzas = new System.Windows.Forms.Label();
             this.gridPlansza = new System.Windows.Forms.TableLayoutPanel();
+            this.timerGry = new System.Windows.Forms.Timer(this.components);
+            this.timerKrokodyl = new System.Windows.Forms.Timer(this.components);
+            this.timerSzop = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // lblCzas
             // 
             this.lblCzas.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCzas.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblCzas.Location = new System.Drawing.Point(0, 421);
+            this.lblCzas.Location = new System.Drawing.Point(0, 393);
             this.lblCzas.Name = "lblCzas";
-            this.lblCzas.Size = new System.Drawing.Size(431, 29);
+            this.lblCzas.Size = new System.Drawing.Size(431, 57);
             this.lblCzas.TabIndex = 0;
-            this.lblCzas.Text = "label1";
+            this.lblCzas.Text = "Czas";
             this.lblCzas.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lblCzas.Click += new System.EventHandler(this.lblCzas_Click);
             // 
@@ -56,8 +60,12 @@
             this.gridPlansza.RowCount = 2;
             this.gridPlansza.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.gridPlansza.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.gridPlansza.Size = new System.Drawing.Size(431, 421);
+            this.gridPlansza.Size = new System.Drawing.Size(431, 393);
             this.gridPlansza.TabIndex = 1;
+            // 
+            // timerGry
+            // 
+            this.timerGry.Tick += new System.EventHandler(this.timerGry_Tick);
             // 
             // FormGame
             // 
@@ -77,5 +85,8 @@
 
         private System.Windows.Forms.Label lblCzas;
         private System.Windows.Forms.TableLayoutPanel gridPlansza;
+        private System.Windows.Forms.Timer timerGry;
+        private System.Windows.Forms.Timer timerKrokodyl;
+        private System.Windows.Forms.Timer timerSzop;
     }
 }
