@@ -1,0 +1,111 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:lab9.Models;assembly=lab9"
+        xmlns:vm="clr-namespace:lab9.ViewModels;assembly=lab9"
+        mc:Ignorable="d"
+        d:DesignWidth="800" d:DesignHeight="600"
+        x:Class="lab9.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Title="Wniosek">
+
+  <Grid Margin="12">
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="200" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+      <RowDefinition Height="Auto" />
+    </Grid.RowDefinitions>
+
+    <!-- Row 0 -->
+    <Label Grid.Row="0" Grid.Column="0" Content="Miejscowość:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding AktualnyWniosek.Miejscowosc, Mode=TwoWay}" />
+
+    <!-- Row 1 -->
+    <Label Grid.Row="1" Grid.Column="0" Content="Data:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding AktualnyWniosek.Data, Mode=TwoWay}" />
+
+    <!-- Row 2 -->
+    <Label Grid.Row="2" Grid.Column="0" Content="Nr albumu:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding AktualnyWniosek.NumerAlbumu, Mode=TwoWay}" />
+
+    <!-- Row 3 -->
+    <Label Grid.Row="3" Grid.Column="0" Content="Nazwisko i Imię:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding AktualnyWniosek.ImieNazwisko, Mode=TwoWay}" />
+
+    <!-- Row 4 -->
+    <Label Grid.Row="4" Grid.Column="0" Content="Semestr:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding AktualnyWniosek.Semestr, Mode=TwoWay}" />
+
+    <!-- Row 5 -->
+    <Label Grid.Row="5" Grid.Column="0" Content="Rok:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding AktualnyWniosek.Rok, Mode=TwoWay}" />
+
+    <!-- Row 6 -->
+    <Label Grid.Row="6" Grid.Column="0" Content="Kierunek:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="6" Grid.Column="1" Text="{Binding AktualnyWniosek.Kierunek, Mode=TwoWay}" />
+
+    <!-- Row 7 -->
+    <Label Grid.Row="7" Grid.Column="0" Content="Przedmiot:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding AktualnyWniosek.Przedmiot, Mode=TwoWay}" />
+
+    <!-- Row 8 -->
+    <Label Grid.Row="8" Grid.Column="0" Content="Punkty:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding AktualnyWniosek.Punkty, Mode=TwoWay}" />
+
+    <!-- Row 9 -->
+    <Label Grid.Row="9" Grid.Column="0" Content="Prowadzący:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding AktualnyWniosek.Prowadzacy, Mode=TwoWay}" />
+
+    <!-- Row 10 -->
+    <Label Grid.Row="10" Grid.Column="0" Content="Uzasadnienie:" VerticalAlignment="Top" />
+    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding AktualnyWniosek.Uzasadnienie, Mode=TwoWay}" AcceptsReturn="True" Height="100" />
+
+    <!-- Row 11 -->
+    <Label Grid.Row="11" Grid.Column="0" Content="Decyzja:" VerticalAlignment="Center" />
+    <ComboBox Grid.Row="11" Grid.Column="1" SelectedItem="{Binding AktualnyWniosek.Decyzja, Mode=TwoWay}">
+      <ComboBox.Items>
+        <x:String>Wyrażam zgodę</x:String>
+        <x:String>Nie wyrażam zgody</x:String>
+      </ComboBox.Items>
+    </ComboBox>
+
+    <!-- Row 12 -->
+    <Label Grid.Row="12" Grid.Column="0" Content="Członek Komisji 1:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="12" Grid.Column="1" Text="{Binding AktualnyWniosek.CzlonekKomisji1, Mode=TwoWay}" />
+
+    <!-- Row 13 -->
+    <Label Grid.Row="13" Grid.Column="0" Content="Członek Komisji 2:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="13" Grid.Column="1" Text="{Binding AktualnyWniosek.CzlonekKomisji2, Mode=TwoWay}" />
+
+    <!-- Row 14 -->
+    <Label Grid.Row="14" Grid.Column="0" Content="Członek Komisji 3:" VerticalAlignment="Center" />
+    <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding AktualnyWniosek.CzlonekKomisji3, Mode=TwoWay}" />
+
+    <!-- Row 15: Buttons -->
+    <StackPanel Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,12,0,0">
+      <Button Command="{Binding SaveCommand}" Content="Zapisz do bazy" />
+      <Button Command="{Binding LoadCommand}" Content="Wczytaj ostatni" />
+      <TextBlock Text="{Binding StatusMessage}" VerticalAlignment="Center" Margin="12,0,0,0" />
+    </StackPanel>
+
+  </Grid>
+
+</Window>
