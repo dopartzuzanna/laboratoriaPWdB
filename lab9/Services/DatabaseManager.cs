@@ -60,16 +60,43 @@ namespace lab9.Services
             using (var connection = new SQLiteConnection(_connectionString))
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = @"
-                    INSERT INTO Wnioski (
-                        Miejscowosc, Data, NumerAlbumu, ImieNazwisko, Semestr, Rok, Kierunek,
-                        Przedmiot, Punkty, Prowadzacy, Uzasadnienie, Decyzja,
-                        CzlonekKomisji1, CzlonekKomisji2, CzlonekKomisji3
-                    ) VALUES (
-                        @Miejscowosc, @Data, @NumerAlbumu, @ImieNazwisko, @Semestr, @Rok, @Kierunek,
-                        @Przedmiot, @Punkty, @Prowadzacy, @Uzasadnienie, @Decyzja,
-                        @CzlonekKomisji1, @CzlonekKomisji2, @CzlonekKomisji3
-                    );";
+                // If model has an Id, update existing record, otherwise insert new
+                if (model.Id > 0)
+                {
+                    command.CommandText = @"
+                        UPDATE Wnioski SET
+                            Miejscowosc = @Miejscowosc,
+                            Data = @Data,
+                            NumerAlbumu = @NumerAlbumu,
+                            ImieNazwisko = @ImieNazwisko,
+                            Semestr = @Semestr,
+                            Rok = @Rok,
+                            Kierunek = @Kierunek,
+                            Przedmiot = @Przedmiot,
+                            Punkty = @Punkty,
+                            Prowadzacy = @Prowadzacy,
+                            Uzasadnienie = @Uzasadnienie,
+                            Decyzja = @Decyzja,
+                            CzlonekKomisji1 = @CzlonekKomisji1,
+                            CzlonekKomisji2 = @CzlonekKomisji2,
+                            CzlonekKomisji3 = @CzlonekKomisji3
+                        WHERE Id = @Id;";
+
+                    command.Parameters.AddWithValue("@Id", model.Id);
+                }
+                else
+                {
+                    command.CommandText = @"
+                        INSERT INTO Wnioski (
+                            Miejscowosc, Data, NumerAlbumu, ImieNazwisko, Semestr, Rok, Kierunek,
+                            Przedmiot, Punkty, Prowadzacy, Uzasadnienie, Decyzja,
+                            CzlonekKomisji1, CzlonekKomisji2, CzlonekKomisji3
+                        ) VALUES (
+                            @Miejscowosc, @Data, @NumerAlbumu, @ImieNazwisko, @Semestr, @Rok, @Kierunek,
+                            @Przedmiot, @Punkty, @Prowadzacy, @Uzasadnienie, @Decyzja,
+                            @CzlonekKomisji1, @CzlonekKomisji2, @CzlonekKomisji3
+                        );";
+                }
 
                 command.Parameters.AddWithValue("@Miejscowosc", model.Miejscowosc ?? string.Empty);
                 command.Parameters.AddWithValue("@Data", model.Data ?? string.Empty);
@@ -91,6 +118,18 @@ namespace lab9.Services
                 {
                     connection.Open();
                     command.ExecuteNonQuery();
+
+                    // If we inserted a new record, set the Id on the model
+                    if (model.Id == 0)
+                    {
+                        using (var idCmd = connection.CreateCommand())
+                        {
+                            idCmd.CommandText = "SELECT last_insert_rowid();";
+                            var result = idCmd.ExecuteScalar();
+                            if (result != null && int.TryParse(result.ToString(), out var newId))
+                                model.Id = newId;
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -112,24 +151,24 @@ namespace lab9.Services
                     {
                         if (reader.Read())
                         {
-                            var model = new WniosekModel
-                            {
-                                Miejscowosc = reader["Miejscowosc"]?.ToString() ?? string.Empty,
-                                Data = reader["Data"]?.ToString() ?? string.Empty,
-                                NumerAlbumu = reader["NumerAlbumu"]?.ToString() ?? string.Empty,
-                                ImieNazwisko = reader["ImieNazwisko"]?.ToString() ?? string.Empty,
-                                Semestr = reader["Semestr"]?.ToString() ?? string.Empty,
-                                Rok = reader["Rok"]?.ToString() ?? string.Empty,
-                                Kierunek = reader["Kierunek"]?.ToString() ?? string.Empty,
-                                Przedmiot = reader["Przedmiot"]?.ToString() ?? string.Empty,
-                                Punkty = reader["Punkty"]?.ToString() ?? string.Empty,
-                                Prowadzacy = reader["Prowadzacy"]?.ToString() ?? string.Empty,
-                                Uzasadnienie = reader["Uzasadnienie"]?.ToString() ?? string.Empty,
-                                Decyzja = reader["Decyzja"]?.ToString() ?? string.Empty,
-                                CzlonekKomisji1 = reader["CzlonekKomisji1"]?.ToString() ?? string.Empty,
-                                CzlonekKomisji2 = reader["CzlonekKomisji2"]?.ToString() ?? string.Empty,
-                                CzlonekKomisji3 = reader["CzlonekKomisji3"]?.ToString() ?? string.Empty
-                            };
+                            var model = new WniosekModel();
+                            if (reader["Id"] != null && int.TryParse(reader["Id"].ToString(), out var id))
+                                model.Id = id;
+                            model.Miejscowosc = reader["Miejscowosc"]?.ToString() ?? string.Empty;
+                            model.Data = reader["Data"]?.ToString() ?? string.Empty;
+                            model.NumerAlbumu = reader["NumerAlbumu"]?.ToString() ?? string.Empty;
+                            model.ImieNazwisko = reader["ImieNazwisko"]?.ToString() ?? string.Empty;
+                            model.Semestr = reader["Semestr"]?.ToString() ?? string.Empty;
+                            model.Rok = reader["Rok"]?.ToString() ?? string.Empty;
+                            model.Kierunek = reader["Kierunek"]?.ToString() ?? string.Empty;
+                            model.Przedmiot = reader["Przedmiot"]?.ToString() ?? string.Empty;
+                            model.Punkty = reader["Punkty"]?.ToString() ?? string.Empty;
+                            model.Prowadzacy = reader["Prowadzacy"]?.ToString() ?? string.Empty;
+                            model.Uzasadnienie = reader["Uzasadnienie"]?.ToString() ?? string.Empty;
+                            model.Decyzja = reader["Decyzja"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji1 = reader["CzlonekKomisji1"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji2 = reader["CzlonekKomisji2"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji3 = reader["CzlonekKomisji3"]?.ToString() ?? string.Empty;
 
                             return model;
                         }
@@ -187,6 +226,147 @@ namespace lab9.Services
             }
 
             return list;
+        }
+
+        public System.Collections.Generic.List<WniosekModel> ReadPage(int page, int pageSize, string? nameFilter = null, string? dateFilter = null)
+        {
+            var list = new System.Collections.Generic.List<WniosekModel>();
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                var where = "";
+                if (!string.IsNullOrWhiteSpace(nameFilter) || !string.IsNullOrWhiteSpace(dateFilter))
+                {
+                    var clauses = new System.Collections.Generic.List<string>();
+                    if (!string.IsNullOrWhiteSpace(nameFilter))
+                    {
+                        clauses.Add("ImieNazwisko LIKE @NameFilter");
+                        command.Parameters.AddWithValue("@NameFilter", "%" + nameFilter + "%");
+                    }
+                    if (!string.IsNullOrWhiteSpace(dateFilter))
+                    {
+                        clauses.Add("Data LIKE @DateFilter");
+                        command.Parameters.AddWithValue("@DateFilter", "%" + dateFilter + "%");
+                    }
+                    where = "WHERE " + string.Join(" AND ", clauses);
+                }
+
+                var offset = (page - 1) * pageSize;
+                command.CommandText = $"SELECT * FROM Wnioski {where} ORDER BY Id DESC LIMIT @Limit OFFSET @Offset;";
+                command.Parameters.AddWithValue("@Limit", pageSize);
+                command.Parameters.AddWithValue("@Offset", offset);
+                try
+                {
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var model = new WniosekModel();
+                            if (reader["Id"] != null && int.TryParse(reader["Id"].ToString(), out var id))
+                                model.Id = id;
+                            model.Miejscowosc = reader["Miejscowosc"]?.ToString() ?? string.Empty;
+                            model.Data = reader["Data"]?.ToString() ?? string.Empty;
+                            model.NumerAlbumu = reader["NumerAlbumu"]?.ToString() ?? string.Empty;
+                            model.ImieNazwisko = reader["ImieNazwisko"]?.ToString() ?? string.Empty;
+                            model.Semestr = reader["Semestr"]?.ToString() ?? string.Empty;
+                            model.Rok = reader["Rok"]?.ToString() ?? string.Empty;
+                            model.Kierunek = reader["Kierunek"]?.ToString() ?? string.Empty;
+                            model.Przedmiot = reader["Przedmiot"]?.ToString() ?? string.Empty;
+                            model.Punkty = reader["Punkty"]?.ToString() ?? string.Empty;
+                            model.Prowadzacy = reader["Prowadzacy"]?.ToString() ?? string.Empty;
+                            model.Uzasadnienie = reader["Uzasadnienie"]?.ToString() ?? string.Empty;
+                            model.Decyzja = reader["Decyzja"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji1 = reader["CzlonekKomisji1"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji2 = reader["CzlonekKomisji2"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji3 = reader["CzlonekKomisji3"]?.ToString() ?? string.Empty;
+                            list.Add(model);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error reading data: " + ex.Message);
+                }
+            }
+
+            return list;
+        }
+
+        public int CountFiltered(string? nameFilter = null, string? dateFilter = null)
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                var where = "";
+                if (!string.IsNullOrWhiteSpace(nameFilter) || !string.IsNullOrWhiteSpace(dateFilter))
+                {
+                    var clauses = new System.Collections.Generic.List<string>();
+                    if (!string.IsNullOrWhiteSpace(nameFilter))
+                    {
+                        clauses.Add("ImieNazwisko LIKE @NameFilter");
+                        command.Parameters.AddWithValue("@NameFilter", "%" + nameFilter + "%");
+                    }
+                    if (!string.IsNullOrWhiteSpace(dateFilter))
+                    {
+                        clauses.Add("Data LIKE @DateFilter");
+                        command.Parameters.AddWithValue("@DateFilter", "%" + dateFilter + "%");
+                    }
+                    where = "WHERE " + string.Join(" AND ", clauses);
+                }
+
+                command.CommandText = $"SELECT COUNT(*) FROM Wnioski {where};";
+                try
+                {
+                    connection.Open();
+                    var result = command.ExecuteScalar();
+                    if (result != null && int.TryParse(result.ToString(), out var count))
+                        return count;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error counting data: " + ex.Message);
+                }
+            }
+
+            return 0;
+        }
+
+        public void DeleteById(int id)
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Wnioski WHERE Id = @Id;";
+                command.Parameters.AddWithValue("@Id", id);
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error deleting data: " + ex.Message);
+                }
+            }
+        }
+
+        public void ClearAll()
+        {
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "DELETE FROM Wnioski;";
+                try
+                {
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error clearing data: " + ex.Message);
+                }
+            }
         }
     }
 }

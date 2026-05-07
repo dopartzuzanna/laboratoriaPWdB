@@ -14,6 +14,7 @@ namespace lab9.ViewModels
         private WniosekModel _aktualnyWniosek;
         private string _statusMessage = string.Empty;
         private readonly DatabaseManager _dbManager;
+        private readonly Stack<WniosekModel> _undoStack = new Stack<WniosekModel>();
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
@@ -51,11 +52,98 @@ namespace lab9.ViewModels
             return new ObservableCollection<WniosekModel>(list);
         }
 
+        public ObservableCollection<WniosekModel> GetHistoryPage(int page, int pageSize, string? nameFilter = null, string? dateFilter = null)
+        {
+            var list = _dbManager.ReadPage(page, pageSize, nameFilter, dateFilter);
+            return new ObservableCollection<WniosekModel>(list);
+        }
+
+        public int GetHistoryCount(string? nameFilter = null, string? dateFilter = null)
+        {
+            return _dbManager.CountFiltered(nameFilter, dateFilter);
+        }
+
         public void LoadFromHistory(WniosekModel model)
         {
             if (model == null) return;
             AktualnyWniosek = model;
             StatusMessage = "Wczytano wniosek z historii.";
+        }
+
+        public void DeleteFromHistory(WniosekModel model)
+        {
+            if (model == null) return;
+            try
+            {
+                if (model.Id > 0)
+                {
+                    // push to undo stack before deleting
+                    _undoStack.Push(new WniosekModel
+                    {
+                        Id = model.Id,
+                        Miejscowosc = model.Miejscowosc,
+                        Data = model.Data,
+                        NumerAlbumu = model.NumerAlbumu,
+                        ImieNazwisko = model.ImieNazwisko,
+                        Semestr = model.Semestr,
+                        Rok = model.Rok,
+                        Kierunek = model.Kierunek,
+                        Przedmiot = model.Przedmiot,
+                        Punkty = model.Punkty,
+                        Prowadzacy = model.Prowadzacy,
+                        Uzasadnienie = model.Uzasadnienie,
+                        Decyzja = model.Decyzja,
+                        CzlonekKomisji1 = model.CzlonekKomisji1,
+                        CzlonekKomisji2 = model.CzlonekKomisji2,
+                        CzlonekKomisji3 = model.CzlonekKomisji3
+                    });
+
+                    _dbManager.DeleteById(model.Id);
+                    StatusMessage = "Usunięto wpis z historii. (Możesz cofnąć)";
+                }
+                else
+                {
+                    StatusMessage = "Nie można usunąć wpisu bez Id.";
+                }
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Błąd usuwania: " + ex.Message;
+            }
+        }
+
+        public void UndoDelete()
+        {
+            if (_undoStack.Count == 0)
+            {
+                StatusMessage = "Brak operacji do cofnięcia.";
+                return;
+            }
+
+            var model = _undoStack.Pop();
+            try
+            {
+                // write back the deleted entry (it will insert with original Id if possible)
+                _dbManager.WriteData(model);
+                StatusMessage = "Cofnięto usunięcie.";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Błąd cofania: " + ex.Message;
+            }
+        }
+
+        public void ClearHistory()
+        {
+            try
+            {
+                _dbManager.ClearAll();
+                StatusMessage = "Wyczyszczono historię wniosków.";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Błąd czyszczenia historii: " + ex.Message;
+            }
         }
 
         public MainWindowViewModel()

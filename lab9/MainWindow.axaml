@@ -5,14 +5,34 @@
         xmlns:models="clr-namespace:lab9.Models;assembly=lab9"
         xmlns:vm="clr-namespace:lab9.ViewModels;assembly=lab9"
         mc:Ignorable="d"
-        d:DesignWidth="800" d:DesignHeight="600"
+        d:DesignWidth="900" d:DesignHeight="700"
         x:Class="lab9.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Title="Wniosek">
+        Title="Wypełnianie wniosku komisyjnego"
+        Width="900" Height="700" MinWidth="800" MinHeight="650">
 
-  <Grid Margin="12">
+  <Window.Styles>
+    <Style Selector="Label">
+      <Setter Property="HorizontalAlignment" Value="Right" />
+      <Setter Property="VerticalAlignment" Value="Center" />
+      <Setter Property="Margin" Value="0,6" />
+    </Style>
+    <Style Selector="TextBox">
+      <Setter Property="Margin" Value="6,4,0,4" />
+      <Setter Property="Height" Value="30" />
+    </Style>
+    <Style Selector="ComboBox">
+      <Setter Property="Margin" Value="6,4,0,4" />
+      <Setter Property="Height" Value="30" />
+    </Style>
+    <Style Selector="Button">
+      <Setter Property="Height" Value="36" />
+    </Style>
+  </Window.Styles>
+
+  <Grid Margin="16">
     <Grid.ColumnDefinitions>
-      <ColumnDefinition Width="200" />
+      <ColumnDefinition Width="220" />
       <ColumnDefinition Width="*" />
     </Grid.ColumnDefinitions>
     <Grid.RowDefinitions>
@@ -76,7 +96,7 @@
 
     <!-- Row 10 -->
     <Label Grid.Row="10" Grid.Column="0" Content="Uzasadnienie:" VerticalAlignment="Top" />
-    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding AktualnyWniosek.Uzasadnienie, Mode=TwoWay}" AcceptsReturn="True" Height="100" />
+    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding AktualnyWniosek.Uzasadnienie, Mode=TwoWay}" AcceptsReturn="True" Height="140" />
 
     <!-- Row 11 -->
     <Label Grid.Row="11" Grid.Column="0" Content="Decyzja:" VerticalAlignment="Center" />
@@ -100,7 +120,7 @@
     <TextBox Grid.Row="14" Grid.Column="1" Text="{Binding AktualnyWniosek.CzlonekKomisji3, Mode=TwoWay}" />
 
     <!-- Row 15: Buttons -->
-    <StackPanel Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,12,0,0">
+    <StackPanel Grid.Row="15" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,16,0,0">
       <Button Command="{Binding SaveCommand}" Content="Zapisz do bazy" />
       <Button Command="{Binding LoadCommand}" Content="Wczytaj ostatni" />
       <Button Command="{Binding ClearCommand}" Content="Wyczyść" />
