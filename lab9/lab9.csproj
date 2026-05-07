@@ -18,4 +18,8 @@
     </PackageReference>
     <PackageReference Include="System.Data.SQLite.Core" Version="1.0.119" />
   </ItemGroup>
+  <ItemGroup>
+    <!-- Exclude potentially broken XAML file that was added during editing tools issues -->
+    <AvaloniaXaml Remove="Views\ConfirmDialog.axaml" />
+  </ItemGroup>
 </Project>

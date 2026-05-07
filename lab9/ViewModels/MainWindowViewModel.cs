@@ -4,6 +4,8 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using lab9.Models;
 using lab9.Services;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace lab9.ViewModels
 {
@@ -40,6 +42,21 @@ namespace lab9.ViewModels
 
         public ICommand SaveCommand { get; }
         public ICommand LoadCommand { get; }
+        public ICommand ClearCommand { get; }
+
+        // expose history for external windows
+        public ObservableCollection<WniosekModel> GetHistoryItems()
+        {
+            var list = _dbManager.ReadAll();
+            return new ObservableCollection<WniosekModel>(list);
+        }
+
+        public void LoadFromHistory(WniosekModel model)
+        {
+            if (model == null) return;
+            AktualnyWniosek = model;
+            StatusMessage = "Wczytano wniosek z historii.";
+        }
 
         public MainWindowViewModel()
         {
@@ -48,6 +65,20 @@ namespace lab9.ViewModels
 
             SaveCommand = new RelayCommand(_ => ExecuteSave());
             LoadCommand = new RelayCommand(_ => ExecuteLoad());
+            ClearCommand = new RelayCommand(_ => ExecuteClear());
+        }
+
+        private void ExecuteClear()
+        {
+            try
+            {
+                AktualnyWniosek = new WniosekModel();
+                StatusMessage = "Wyczyszczono formularz.";
+            }
+            catch (Exception ex)
+            {
+                StatusMessage = "Błąd podczas czyszczenia: " + ex.Message;
+            }
         }
 
         private void ExecuteSave()

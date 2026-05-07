@@ -143,5 +143,50 @@ namespace lab9.Services
 
             return null;
         }
+
+        public System.Collections.Generic.List<WniosekModel> ReadAll()
+        {
+            var list = new System.Collections.Generic.List<WniosekModel>();
+            using (var connection = new SQLiteConnection(_connectionString))
+            using (var command = connection.CreateCommand())
+            {
+                command.CommandText = "SELECT * FROM Wnioski ORDER BY Id DESC;";
+                try
+                {
+                    connection.Open();
+                    using (var reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var model = new WniosekModel();
+                            if (reader["Id"] != null && int.TryParse(reader["Id"].ToString(), out var id))
+                                model.Id = id;
+                            model.Miejscowosc = reader["Miejscowosc"]?.ToString() ?? string.Empty;
+                            model.Data = reader["Data"]?.ToString() ?? string.Empty;
+                            model.NumerAlbumu = reader["NumerAlbumu"]?.ToString() ?? string.Empty;
+                            model.ImieNazwisko = reader["ImieNazwisko"]?.ToString() ?? string.Empty;
+                            model.Semestr = reader["Semestr"]?.ToString() ?? string.Empty;
+                            model.Rok = reader["Rok"]?.ToString() ?? string.Empty;
+                            model.Kierunek = reader["Kierunek"]?.ToString() ?? string.Empty;
+                            model.Przedmiot = reader["Przedmiot"]?.ToString() ?? string.Empty;
+                            model.Punkty = reader["Punkty"]?.ToString() ?? string.Empty;
+                            model.Prowadzacy = reader["Prowadzacy"]?.ToString() ?? string.Empty;
+                            model.Uzasadnienie = reader["Uzasadnienie"]?.ToString() ?? string.Empty;
+                            model.Decyzja = reader["Decyzja"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji1 = reader["CzlonekKomisji1"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji2 = reader["CzlonekKomisji2"]?.ToString() ?? string.Empty;
+                            model.CzlonekKomisji3 = reader["CzlonekKomisji3"]?.ToString() ?? string.Empty;
+                            list.Add(model);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error reading data: " + ex.Message);
+                }
+            }
+
+            return list;
+        }
     }
 }

@@ -65,5 +65,15 @@ namespace lab9.Models
 
         private string _czlonekKomisji3 = string.Empty;
         public string CzlonekKomisji3 { get => _czlonekKomisji3; set => RaiseAndSetIfChanged(ref _czlonekKomisji3, value); }
+
+        private int _id;
+        public int Id { get => _id; set => RaiseAndSetIfChanged(ref _id, value); }
+
+        public override string ToString()
+        {
+            var name = string.IsNullOrWhiteSpace(ImieNazwisko) ? "(brak nazwiska)" : ImieNazwisko;
+            var date = string.IsNullOrWhiteSpace(Data) ? "(brak daty)" : Data;
+            return $"{name} - {date}";
+        }
     }
 }
