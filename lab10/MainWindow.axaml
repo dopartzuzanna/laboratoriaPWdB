@@ -1,0 +1,76 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:dg="clr-namespace:Avalonia.Controls;assembly=Avalonia.Controls.DataGrid"
+        xmlns:local="clr-namespace:lab10"
+        x:Class="lab10.MainWindow"
+        x:DataType="local:MainWindow"
+        Title="Analizator DNA">
+
+    <Window.Resources>
+        <local:LengthToHeightConverter x:Key="LengthToHeightConverter"/>
+    </Window.Resources>
+
+    <DockPanel Margin="20">
+        <StackPanel DockPanel.Dock="Top" Spacing="10">
+            <Button Content="Wczytaj plik FASTA" Click="OnLoadFastaClick" Background="DarkGreen" Foreground="White"/>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Right" Width="250" Margin="20,0,0,0" Spacing="10"
+                    DataContext="{Binding #SequenceGrid.SelectedItem}"
+                    x:DataType="local:FastaSequence">
+            
+            <TextBlock Text="Szczegóły sekwencji" FontSize="18" FontWeight="Bold"/>
+            <Separator/>
+            
+            <StackPanel Spacing="5" IsVisible="{Binding $parent[StackPanel].DataContext, Converter={x:Static ObjectConverters.IsNotNull}}">
+                <TextBlock Text="{Binding Name}" TextWrapping="Wrap" FontWeight="SemiBold"/>
+                <TextBlock Text="{Binding Length, StringFormat='Długość: {0} bp'}"/>
+                <TextBlock Text="{Binding GcPercent, StringFormat='Zawartość GC: {0:F2}%'}"/>
+                <TextBlock Text="{Binding CodonCount, StringFormat='Liczba kodonów: {0}'}"/>
+                <Separator Margin="0,5"/>
+                <TextBlock Text="Rozkład zasad:"/>
+                <TextBlock Text="{Binding CountA, StringFormat='  A: {0}'}"/>
+                <TextBlock Text="{Binding CountT, StringFormat='  T: {0}'}"/>
+                <TextBlock Text="{Binding CountG, StringFormat='  G: {0}'}"/>
+                <TextBlock Text="{Binding CountC, StringFormat='  C: {0}'}"/>
+            </StackPanel>
+            
+            <TextBlock Text="Wybierz sekwencję z listy" 
+                       IsVisible="{Binding $parent[StackPanel].DataContext, Converter={x:Static ObjectConverters.IsNull}}"
+                       FontStyle="Italic" Foreground="Gray"/>
+        </StackPanel>
+
+        <StackPanel DockPanel.Dock="Bottom" Spacing="10" Margin="0,20,0,0">
+            <StackPanel Orientation="Horizontal" Spacing="10">
+                <Button Content="Eksportuj CSV" Click="OnExportCsvClick" Background="Gray" Foreground="White"/>
+                <Button Content="Eksportuj JSON" Click="OnExportJsonClick" Background="Gray" Foreground="White"/>
+            </StackPanel>
+            
+            <TextBlock Text="Rozkład długości sekwencji:" FontWeight="Bold"/>
+            <ItemsControl ItemsSource="{Binding Sequences}">
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <StackPanel Orientation="Horizontal" Height="100" VerticalAlignment="Bottom" Spacing="2"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate x:DataType="local:FastaSequence">
+                        <Border Background="SteelBlue" Width="10" VerticalAlignment="Bottom"
+                                Height="{Binding Length, Converter={StaticResource LengthToHeightConverter}}">
+                            <ToolTip.Tip>
+                                <TextBlock Text="{Binding Name}"/>
+                            </ToolTip.Tip>
+                        </Border>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+        </StackPanel>
+
+        <dg:DataGrid Name="SequenceGrid" ItemsSource="{Binding Sequences}" AutoGenerateColumns="False">
+            <dg:DataGrid.Columns>
+                <dg:DataGridTextColumn Header="Nazwa" Binding="{Binding Name}" Width="*" x:DataType="local:FastaSequence"/>
+                <dg:DataGridTextColumn Header="Długość" Binding="{Binding Length}" Width="100" x:DataType="local:FastaSequence"/>
+            </dg:DataGrid.Columns>
+        </dg:DataGrid>
+    </DockPanel>
+</Window>
