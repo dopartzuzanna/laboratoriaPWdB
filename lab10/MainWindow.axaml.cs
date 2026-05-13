@@ -1,7 +1,8 @@
 using Avalonia.Controls;
-using Avalonia.Interactivity;
-using Avalonia.Platform.Storage;
 using Avalonia.Data.Converters;
+using Avalonia.Interactivity;
+using Avalonia.Media;
+using Avalonia.Platform.Storage;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -60,8 +61,13 @@ namespace lab10
             DataContext = this;
         }
 
+       
         private async void OnLoadFastaClick(object sender, RoutedEventArgs e)
         {
+            // Resetujemy status przed nowym wczytywaniem
+            StatusText.Text = "Wczytywanie...";
+            StatusText.Foreground = Brushes.Gray;
+
             var files = await this.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
             {
                 Title = "Wybierz plik FASTA",
@@ -70,15 +76,36 @@ namespace lab10
 
             if (files.Any())
             {
+                int countBefore = Sequences.Count;
+
                 foreach (var file in files)
                 {
                     using var stream = await file.OpenReadAsync();
                     using var reader = new StreamReader(stream);
                     ParseFasta(await reader.ReadToEndAsync());
                 }
+
+                // WALIDACJA: Sprawdzamy, czy przybyło jakichkolwiek sekwencji
+                if (Sequences.Count > countBefore)
+                {
+                    StatusText.Text = $"Sukces: Wczytano {Sequences.Count - countBefore} nowych sekwencji.";
+                    StatusText.Foreground = Brushes.Green;
+                }
+                else
+                {
+                    StatusText.Text = "Błąd: Wybrany plik nie zawiera poprawnych sekwencji FASTA (brak znaku '>')";
+                    StatusText.Foreground = Brushes.Red;
+                }
             }
         }
 
+        // NOWA METODA: Czyści listę i wykres
+        private void OnClearClick(object sender, RoutedEventArgs e)
+        {
+            Sequences.Clear();
+            StatusText.Text = "Status: Dane wyczyszczone.";
+            StatusText.Foreground = Brushes.Gray;
+        }
         private void ParseFasta(string content)
         {
             var lines = content.Split('\n');

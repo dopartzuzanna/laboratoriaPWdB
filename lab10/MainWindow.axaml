@@ -11,9 +11,6 @@
     </Window.Resources>
 
     <DockPanel Margin="20">
-        <StackPanel DockPanel.Dock="Top" Spacing="10">
-            <Button Content="Wczytaj plik FASTA" Click="OnLoadFastaClick" Background="DarkGreen" Foreground="White"/>
-        </StackPanel>
 
         <StackPanel DockPanel.Dock="Right" Width="250" Margin="20,0,0,0" Spacing="10"
                     DataContext="{Binding #SequenceGrid.SelectedItem}"
@@ -65,6 +62,15 @@
                 </ItemsControl.ItemTemplate>
             </ItemsControl>
         </StackPanel>
+
+        <StackPanel DockPanel.Dock="Top" Spacing="10">
+    <StackPanel Orientation="Horizontal" Spacing="10">
+        <Button Content="Wczytaj plik FASTA" Click="OnLoadFastaClick" Background="DarkGreen" Foreground="White"/>
+        <Button Content="Wyczyść wszystko" Click="OnClearClick" Background="DarkRed" Foreground="White"/>
+    </StackPanel>
+    
+    <TextBlock Name="StatusText" Text="Status: Oczekiwanie na plik..." FontWeight="Bold" Foreground="Gray"/>
+</StackPanel>
 
         <dg:DataGrid Name="SequenceGrid" ItemsSource="{Binding Sequences}" AutoGenerateColumns="False">
             <dg:DataGrid.Columns>
