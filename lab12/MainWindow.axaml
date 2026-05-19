@@ -1,0 +1,101 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:lab12"
+        x:Class="lab12.MainWindow"
+        x:DataType="local:MainWindow"
+        Title="BioInfo Notebook - Elektroniczny Notatnik Laboratoryjny" 
+        Width="1000" Height="650"
+        RequestedThemeVariant="Light">
+
+    <Grid ColumnDefinitions="300, *">
+        
+        <Border Grid.Column="0" Background="#f4f4f6" BorderBrush="LightGray" BorderThickness="0,0,1,0" Padding="15">
+            <DockPanel>
+                <TextBlock Text="Sesje Analityczne" FontSize="18" FontWeight="Bold" Foreground="Black" DockPanel.Dock="Top" Margin="0,0,0,10"/>
+                
+                <StackPanel DockPanel.Dock="Bottom" Spacing="5" Margin="0,10,0,0">
+                    <TextBox Name="txtNewSessionTitle" Watermark="Tytuł nowej sesji..."/>
+                    <Button Content="Stwórz nową sesję" Click="OnCreateSessionClick" 
+                            HorizontalAlignment="Stretch" HorizontalContentAlignment="Center"
+                            Background="DarkGreen" Foreground="White"/>
+                </StackPanel>
+                
+                <ListBox Name="lstSessions" SelectionChanged="OnSessionSelectionChanged">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate x:DataType="local:AnalysisSession">
+                            <DockPanel HorizontalAlignment="Stretch" LastChildFill="True">
+                                <Button Content="✕" Click="OnDeleteSessionClick" 
+                                        Background="Transparent" Foreground="Red" FontWeight="Bold"
+                                        Padding="5,2" Margin="5,0,0,0" DockPanel.Dock="Right"
+                                        ToolTip.Tip="Usuń tę sesję"/>
+                                <TextBlock Text="{Binding Summary}" TextWrapping="Wrap" VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </DockPanel>
+        </Border>
+        
+        <Grid Grid.Column="1" RowDefinitions="Auto, *, Auto" Margin="20">
+            
+            <DockPanel Grid.Row="0" Margin="0,0,0,15">
+                <Button Name="btnExportPdf" Content="Eksportuj sesję do PDF" Click="OnExportPdfClick" 
+                        DockPanel.Dock="Right" Background="DarkOrange" Foreground="White"/>
+                <TextBlock Name="lblSessionTitle" Text="Wybierz sesję z listy po lewej stronie" FontSize="20" FontWeight="Bold" VerticalAlignment="Center"/>
+            </DockPanel>
+
+            <ScrollViewer Grid.Row="1" Margin="0,0,0,15">
+                <ItemsControl Name="itemsEntries">
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate x:DataType="local:NotebookEntry">
+                            <Border BorderBrush="LightGray" BorderThickness="1" CornerRadius="5" Padding="15" Margin="0,0,0,10" Background="#fafafa">
+                                <StackPanel Spacing="5">
+                                    <DockPanel>
+                                        <Button Content="Usuń wpis" Click="OnDeleteEntryClick" 
+                                                Background="#fee2e2" Foreground="#ef4444" FontSize="11"
+                                                Padding="8,4" DockPanel.Dock="Right" CornerRadius="3"/>
+                                        <TextBlock Text="{Binding Timestamp, StringFormat='{}{0:yyyy-MM-dd HH:mm:ss}'}" FontWeight="Bold" Foreground="Gray" VerticalAlignment="Center"/>
+                                    </DockPanel>
+                                    
+                                    <TextBlock Text="{Binding Content}" TextWrapping="Wrap" Margin="0,5,0,5" Foreground="Black"/>
+                                    
+                                    <ItemsControl ItemsSource="{Binding Attachments}">
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate x:DataType="local:AnalysisAttachment">
+                                                <TextBlock Margin="0,2,0,0">
+                                                    <Span Foreground="Gray">[<Run Text="{Binding FileType}"/>]</Span>
+                                                    <Span Foreground="DodgerBlue" TextDecorations="Underline">
+                                                        <Run Text="{Binding FileName}"/>
+                                                    </Span>
+                                                    <Span Foreground="Gray" FontStyle="Italic" FontSize="11"> (Ścieżka: <Run Text="{Binding FilePath}"/>)</Span>
+                                                </TextBlock>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+
+            <Border Grid.Row="2" BorderBrush="LightGray" BorderThickness="0,1,0,0" Padding="0,15,0,0">
+                <StackPanel Spacing="10">
+                    <TextBlock Text="Dodaj nowy wpis do dziennika:" FontWeight="SemiBold"/>
+                    <TextBox Name="txtEntryContent" Watermark="Opisz wykonane działania, komendy lub wyniki analizy..." Height="80" TextWrapping="Wrap"/>
+                    
+                    <DockPanel>
+                        <StackPanel Orientation="Horizontal" Spacing="5" DockPanel.Dock="Left">
+                            <Button Content="Dodaj załącznik" Click="OnAddAttachmentClick" Background="Gray" Foreground="White"/>
+                            <TextBlock Name="lblAttachmentStatus" VerticalAlignment="Center" Foreground="Gray" FontStyle="Italic" Text="Brak załączników"/>
+                        </StackPanel>
+                        
+                        <Button Content="Zapisz wpis" Click="OnSaveEntryClick" 
+                                DockPanel.Dock="Right" Background="DodgerBlue" Foreground="White" Width="120" HorizontalContentAlignment="Center"/>
+                    </DockPanel>
+                </StackPanel>
+            </Border>
+            
+        </Grid>
+    </Grid>
+</Window>
