@@ -1,0 +1,13 @@
+Repozytorium składa się z projektów wykonywanych na zajęcia z przedmiotu Programowanie Wizualne dla Bioinformatyków. Kolejno są to:
+- lab1 - kalkulator
+- lab2 - mini aplikacja okienkowa (zamawianie jedzenia)
+- lab3 - arkusz kalkulacyjny zawierające informacje o pracownikach
+- lab4 - ćwiczenie operowania na commitach oraz wprowadzenie konceptu gałęzi (branch) ich tworzenia oraz łączenia (merge). aplikacja dokonująca 
+- pewnych operacji na wczytanym pliku (.bmp)
+- lab5 - modyfikacji projektu z laboratoriów 3
+- lab6 - gra: złap dydelfa
+- lab7 - stworzenie aplikacji dokonującej podziału na sekwencje nukleotydowe ACGT
+- lab8 - projekt grupowy (inne repozytorium - https://github.com/Filavandrel1/programowanie-wizualne-projekt-8). gry karciane
+- lab9 - formularz danych
+- lab10 - analizator FASTA
+- lab11 -  menedżer próbek biologicznych z kodami QR
