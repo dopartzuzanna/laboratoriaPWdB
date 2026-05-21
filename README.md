@@ -11,3 +11,4 @@ Repozytorium składa się z projektów wykonywanych na zajęcia z przedmiotu Pro
 - lab9 - formularz danych
 - lab10 - analizator FASTA
 - lab11 -  menedżer próbek biologicznych z kodami QR
+- lab12 - bioinfo notebook: notatnik do dokumentacji analiz bioinformatycznych
